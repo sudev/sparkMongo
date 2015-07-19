@@ -27,14 +27,14 @@ public class MongoWrite {
 
 		// Map RDD to MongoDB Objects
 		JavaPairRDD<Object, BSONObject> mongordd = inputRdd
-				.mapToPair(new midbMongo());
+				.mapToPair(new basicDBMongo());
 		// Update MongoDB
 		mongordd.saveAsNewAPIHadoopFile("file:///notapplicable", Object.class,
 				Object.class, MongoOutputFormat.class, midbconf);
 	}
 }
 
-final class midbMongo implements PairFunction<Tuple2<String, Map<String, Map<String, String>>>, Object, BSONObject> {
+final class basicDBMongo implements PairFunction<Tuple2<String, Map<String, Map<String, String>>>, Object, BSONObject> {
 	public Tuple2<Object, BSONObject> call(
 			Tuple2<String, Map<String, Map<String, String>>> companyTuple)
 			throws Exception {

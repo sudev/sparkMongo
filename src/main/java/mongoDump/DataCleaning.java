@@ -20,7 +20,7 @@ import scala.Tuple2;
  */
 public class DataCleaning {
 	
-	public static JavaPairRDD<String, Map<String, Map<String, String>>> prepros(
+	public static JavaPairRDD<String, Map<String, Map<String, String>>> dataclean(
 			JavaSparkContext sc, String filepath, final Set<String> filterTag,
 			final int pos_tag,  final int pos_cname,
 			final int pos_date, final int pos_value) {

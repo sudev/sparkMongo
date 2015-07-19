@@ -54,14 +54,14 @@ public class MongoMain {
 		
 		// Balance sheet
 		JavaPairRDD<String, Map<String, Map<String, String>>> bsRdd = DataCleaning
-				.prepros(sc, bsfilepath, filterTagsBS, 4, 0, 2, 1);
+				.dataclean(sc, bsfilepath, filterTagsBS, 4, 0, 2, 1);
 		// Income Statement
 
 		JavaPairRDD<String, Map<String, Map<String, String>>> isRdd = DataCleaning
-				.prepros(sc, isfilepath, filterTagsIS, 2, 0, 4, 1);
+				.dataclean(sc, isfilepath, filterTagsIS, 2, 0, 4, 1);
 		// Cash Flow
 		JavaPairRDD<String, Map<String, Map<String, String>>> csRdd = DataCleaning
-				.prepros(sc, cffilepath, filterTagsCS, 4, 0, 2, 1);
+				.dataclean(sc, cffilepath, filterTagsCS, 4, 0, 2, 1);
 		
 		/*
 		 * Union of cleaned dataset
